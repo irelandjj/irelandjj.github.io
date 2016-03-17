@@ -12,6 +12,28 @@
 			d3.csv("../irelandjj.github.io/Data1.csv", function(data) {
 				console.log(data);
 			});
+			
+			var dataset = [ 5, 10, 15, 20, 25 ];
+			d3.select("body").selectAll("p")
+			.data(dataset)
+			.enter()
+			.append("p")
+			.text(function(d) { return "I can count up to " + d; })
+			.style("color", function(d) {
+											if (d > 15) { //Threshold of 15
+												return "red";
+											} else {
+												return "black";
+											}
+										})
+			.style("font-size","24pt")
+			.style("font-family","sans-serif")				
+			.style("font-weight", "bold");
+			
+			var chart1 = d3.select("#area1")
+				.append("svg")
+			var chart2 = d3.select("#area2")
+				.append("svg")
 		</script>
 		
 	</body>
